@@ -9,10 +9,9 @@ branches:
 jobs:
 build:
 runs-on: ubuntu-latest
-
 steps:
-  - name: Baixar codigo
-    uses: actions/checkout@v4
+- name: Baixar codigo
+uses: actions/checkout@v4
 
   - name: Configurar Java
     uses: actions/setup-java@v4
@@ -25,7 +24,7 @@ steps:
     with:
       channel: stable
 
-  - name: Criar projeto Flutter Android
+  - name: Criar arquivos Android
     run: |
       flutter create --platforms=android --project-name memorie temp_project
       cp -r temp_project/android ./android
